@@ -18,7 +18,6 @@ class HomeLayout extends React.Component {
               className="header"
               style={{ backgroundColor: "rgb(32, 122, 211)" }}
             >
-              <div className="logo" />
               <Menu
                 //theme="dark"
                 mode="horizontal"
@@ -35,11 +34,16 @@ class HomeLayout extends React.Component {
                   </Link>
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link to="/sub2"> 详情页 </Link>
+                  <Link to="/sub2" style={{ color: "#fff" }}>
+                    详情页
+                  </Link>
                 </Menu.Item>
                 <Menu.Item key="3">
-                  <Link to="/sub3"> 个人页 </Link>
+                  <Link to="/sub3" style={{ color: "#fff" }}>
+                    个人页
+                  </Link>
                 </Menu.Item>
+                <span style={{ float: "right" }}>退出登陆</span>
               </Menu>
             </Header>
 

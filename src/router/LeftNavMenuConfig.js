@@ -50,31 +50,31 @@ const menuList = [
     },
     {
         title: '个人',
-        key: '/sub1',
+        key: '/user',
         img: '/assets/个人.gif',
         children: [{
                 title: '个人信息',
-                key: '/admin/ui/buttons',
+                key: '/user/info',
                 img: '/assets/报账.gif'
             },
             {
                 title: '个人合同',
-                key: '/admin/ui/modals',
+                key: '/user/contract',
                 img: '/assets/报账.gif'
             },
             {
                 title: '个人申请',
-                key: '/admin/ui/loadings',
+                key: '/user/apply',
                 img: '/assets/报账.gif'
             },
             {
                 title: '调动记录',
-                key: '/admin/ui/notification',
+                key: '/user/transfer',
                 img: '/assets/报账.gif'
             },
             {
                 title: '通讯录',
-                key: '/admin/ui/messages',
+                key: '/user/addressbook',
                 img: '/assets/报账.gif'
             },
         ]

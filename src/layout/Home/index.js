@@ -1,12 +1,12 @@
 import React from "react";
-import { Layout, Menu, Icon, Popconfirm, message  } from "antd";
+import { Layout, Menu, Icon, Popconfirm, message, Row, Col  } from "antd";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./index.css";
 
-import NavLeft from "../../components/NavLeft";
+
 import PersonSummary from "../../components/Personal/PersonSummary";
 import RecursiveMenu from '../../utils/menuRender';
-import menuList from '../../router/TopNavMenuConfig';
+
 import leftMenu from '../../router/LeftNavMenuConfig';
 import CustomConfirm from '../../components/ConfirmCop';
 import InformPage from '../../pages/inform';
@@ -17,11 +17,15 @@ const { Header, Content, Sider, Footer } = Layout;
 
 class HomeLayout extends React.Component {
 
+  state = {
+    collapsed: false,
+  }
   // 处理退出登陆事件
   handleLogout = (e)=>{
     console.log("退出登陆。",e);
     message.success('你已成功退出');
   }
+
   
 
   render() {
@@ -30,10 +34,13 @@ class HomeLayout extends React.Component {
         <div>
           <Layout>
             {/* 头部导航栏 */}
+            
+             
             <Header
               className="header"
               style={{ backgroundColor: "#3F9AE1" }}
             >
+         
               <Menu
                 mode="horizontal"
                 style={{
@@ -49,23 +56,32 @@ class HomeLayout extends React.Component {
                   RecursiveMenu.renderMenu(leftMenu)
                 }
               </Menu>
+             
               {/* 退出登陆 */}
-              <div style={{
-                display: 'inline-block',
-                float: 'right',
-                fontSize: 20,
-                color: '#fff',
-                cursor: 'pointer'
-              }}>
-                <CustomConfirm title="你确定要退出吗？" confirm={this.handleLogout} />
-                
-                
-              </div>
+             
+                <div style={{
+                  display: 'inline-block',
+                  float: 'right',
+                  fontSize: 20,
+                  color: '#fff',
+                  cursor: 'pointer'
+                }}>
+                  <CustomConfirm title="你确定要退出吗？" confirm={this.handleLogout} />     
+                </div>
+             
             </Header>
-
+          
+            
+            
             <Layout>
               {/* 侧边导航栏 */}
-              <Sider width={200} style={{ background: "#fff" }}>
+             
+              <Sider width={200}
+               style={{ background: "#fff" }}
+               //collapsed={this.state.collapsed}
+               breakpoint="md"
+               collapsedWidth="0"
+               >
                 {/* 个人头像 */}
                 <div className="logo-person">
                   <PersonSummary />
@@ -77,7 +93,11 @@ class HomeLayout extends React.Component {
 
                 {/* <NavLeft /> */}
               </Sider>
+              
               {/* 内容区 */}
+              {/*  */}
+
+            
               <Layout style={{ padding: "0 24px 24px" }}>
                 <Content
                   style={{
@@ -94,7 +114,10 @@ class HomeLayout extends React.Component {
                   Ant Design ©2018 Created by Ant UED
                 </Footer>
               </Layout>
+            
+              {/*  */}
             </Layout>
+            
           </Layout>
         </div>
       </Router>

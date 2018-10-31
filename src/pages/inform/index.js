@@ -26,8 +26,8 @@ class InformPage extends React.Component {
     render() {
         return (
             <div>
-                <Row>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12}  >
+                <Row type='flex'>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}  >
                         <Card
                             title="通知公告"
                             extra={<a href="#">更多</a>}
@@ -55,7 +55,7 @@ class InformPage extends React.Component {
                             />
                         </Card>
                     </Col>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12} >
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12} >
                         <Card
                             title="工作日程"
                             extra={<a href="#">更多</a>}
@@ -85,7 +85,7 @@ class InformPage extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12}>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                         <Card
                             title="会议纪要"
                             extra={<a href="#">更多</a>}
@@ -113,7 +113,7 @@ class InformPage extends React.Component {
                             />
                         </Card>
                     </Col>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12}>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                         <Card
                             title="代办事项"
                             extra={<a href="#">更多</a>}
@@ -143,7 +143,7 @@ class InformPage extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12}>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                         <Card
                             title="员工去向"
                             extra={<a href="#">更多</a>}
@@ -170,7 +170,7 @@ class InformPage extends React.Component {
                             />
                         </Card>
                     </Col>
-                    <Col xs={2} sm={4} md={12} lg={12} xl={12}>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12}>
                         <Card
                             title="规章制度"
                             extra={<a href="#">更多</a>}

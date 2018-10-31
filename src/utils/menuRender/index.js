@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Icon, Divider } from "antd";
 // import "./index.less";
 // import { Link } from "react-router-dom";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link, } from "react-router-dom";
 
 class RecursiveMenu {
 
@@ -37,9 +37,10 @@ class RecursiveMenu {
   };
 
   static renderLeftMenu = (data) => {
-    console.log("渲染菜单/。。。。");
+    console.log("根据顶部菜单渲染左侧菜单/。。。。");
     return data.map(item => {
       return (
+        // <Switch key={item.key}>
         <Route key={item.key} path={item.key} render={props => (
           <Menu
           >
@@ -48,6 +49,7 @@ class RecursiveMenu {
            item.children.map(child => {
              return (
               <Menu.Item key={child.key}>
+              <Link to={`${child.key}`}>
                 <img src={child.img} alt="" style=
                 {{
                   width: 21,
@@ -56,6 +58,7 @@ class RecursiveMenu {
                 }}
                 />
                 { child.title }
+                </Link>
               </Menu.Item>
              );
            })
@@ -63,6 +66,7 @@ class RecursiveMenu {
           </Menu>
         )}
         />
+        // </Switch>
       );
     })
   };
